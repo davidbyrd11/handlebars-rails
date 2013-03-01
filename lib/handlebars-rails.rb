@@ -12,7 +12,7 @@ module Handlebars::Rails
     config.handlebars.override_ember_precompiler = false
 
     initializer 'handlebars.handler.setup', :before => :add_view_paths do |app|
-      app.paths['app/views'] << 'app/templates'
+      app.paths['app/views'] << 'app/assets/javascripts/'
       ActiveSupport.on_load(:action_view) do
         ActionView::Template.register_template_handler(:hbs, ::Handlebars::TemplateHandler)
       end
